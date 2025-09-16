@@ -1,0 +1,23 @@
+Windows Registry Editor Version 5.00
+
+; Create the Shell2UI Submenu
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Shell2UI]
+"Icon"="C:\\Windows\\System32\\shell2ui.ico"
+"MUIVerb"="Shell2UI"
+"SubCommands"=""
+
+; Create the Command Prompt item under Shell2UI
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Shell2UI\shell\CommandPrompt]
+@="Command Prompt"
+"Icon"="cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Shell2UI\shell\CommandPrompt\command]
+@="cmd.exe /k cd /d \"%V\""
+
+; Create the PowerShell item under Shell2UI
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Shell2UI\shell\Powershell]
+@="PowerShell"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Shell2UI\shell\Powershell\command]
+@="powershell.exe -NoExit -Command Set-Location -LiteralPath '%V'"
